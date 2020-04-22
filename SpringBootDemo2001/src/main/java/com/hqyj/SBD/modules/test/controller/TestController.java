@@ -43,7 +43,7 @@ public class TestController {
 		LOGGER.debug("this is debug log");
 		LOGGER.info("this is info log");
 		LOGGER.warn("this is warn log");
-		LOGGER.error("this is error log");
+		LOGGER.error("this is error log.2222");
 		return "this is log test.";
 	}
 	

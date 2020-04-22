@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "application-{profile}.properties",
+  "type": "java.lang.String",
+  "description": "A description for 'application-{profile}.properties'"
+}]}
