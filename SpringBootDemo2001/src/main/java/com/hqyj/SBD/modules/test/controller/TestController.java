@@ -2,16 +2,15 @@ package com.hqyj.SBD.modules.test.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.spi.LoggerFactoryBinder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.hqyj.SBD.modules.test.controller.vo.ConfigBean;
+import com.hqyj.SBD.modules.test.vo.ConfigBean;
 
-@Controller
+@RestController
+@RequestMapping("/api/test")
 public class TestController {
 	
 	private final static Logger LOGGER = LoggerFactory.getLogger(TestController.class);
@@ -32,12 +31,10 @@ public class TestController {
 	
 	
 	/**
-	 * http://127.0.0.1/test/log
+	 * http://127.0.0.1/api/test/log
 	 * @return
 	 */
-	
-	@RequestMapping("/test/log")
-	@ResponseBody
+	@RequestMapping("/log")
 	public String logTest() {
 		LOGGER.trace("this is trace log");
 		LOGGER.debug("this is debug log");
@@ -49,12 +46,10 @@ public class TestController {
 	
 	
 	/**
-	 * http://127.0.0.1/test/config
+	 * http://127.0.0.1/api/test/config
 	 * @return
 	 */
-	
-	@RequestMapping("/test/config")
-	@ResponseBody
+	@RequestMapping("/config")	
 	public String configTest(){
 		StringBuffer ss = new StringBuffer();
 		ss.append(port).append("---")
@@ -71,13 +66,12 @@ public class TestController {
 	
 	
 	/**
-	 * http://127.0.0.1/test/appDesc
+	 * http://127.0.0.1/api/test/appDesc
 	 * @return
 	 */
-	
-	@RequestMapping("/test/appDesc")
-	@ResponseBody
+	@RequestMapping("/appDesc")
 	public String getAppDsc() {
 		return "hello,this is Syl firstly use springboot";
 	}
+	
 }
